@@ -1,36 +1,36 @@
 # LLM Engineering & Optimization Lab
 
-This repository contains R&D projects focusing on the lifecycle of Large Language Models: from architectural design to efficient fine-tuning and safety alignment.
+В этом репозитории собраны R&D проекты, охватывающие жизненный цикл больших языковых моделей (LLM): от проектирования архитектуры до эффективного дообучения (Fine-Tuning) и выравнивания (Alignment).
 
-Author: Daniil Pushkar
-Role: Product Lead
-Focus: Bridging the gap between deep technical research and business value in AI products.
-
----
-
-## 🛠 Projects Overview
-
-### 1. [Transformer Architecture & BPE Implementation](./01-transformer-architecture/transformer-bpe-impl.ipynb)
-Domain: Architecture & NLP Core
-Deep dive into the "engine" of modern NLP. Implementation of core components from scratch to understand inference costs.
- Tech: PyTorch, Custom BPE Tokenizer.
- Result: Trained a generative model from scratch, validating the impact of tokenization on context window efficiency.
-
-### 2. [Alignment Strategies: DPO vs PPO](./02-llm-alignment-research/dpo-vs-ppo-alignment.ipynb)
-Domain: AI Safety & Alignment
-Research on aligning LLMs with human preferences to reduce hallucinations.
- Tech: TRL (Transformer Reinforcement Learning), PyTorch.
- Result: Compared classical RLHF (PPO) with modern DPO, demonstrating DPO's advantage in computational efficiency for business adoption.
-
-### 3. [Efficient Fine-Tuning (PEFT/LoRA)](./03-peft-optimization/lora-dora-finetuning.ipynb)
-Domain: Resource Optimization
-Fine-tuning heavy models on limited hardware using Low-Rank Adapters.
- Tech: Hugging Face PEFT, BitsAndBytes (Quantization).
- Result: Successfully adapted an LLM for specific domain tasks using <10% of trainable parameters, proving the viability of on-premise deployment on cheaper hardware.
+Автор: Даниил Пушкарь
+Роль: Product Lead | Аспирант ИТМО
+Фокус: Соединяю глубокую техническую экспертизу (R&D) с бизнес-ценностью в AI-продуктах.
 
 ---
 
-## 💻 Tech Stack
+## 🛠 Обзор проектов (Projects Overview)
+
+### 1. Архитектура Трансформера и BPE Токенизация(./01-transformer-architecture/transformer-bpe-impl.ipynb)
+Домен: Архитектура и NLP Core
+Глубокое погружение в «движок» современного NLP. Реализация ключевых компонентов с нуля для оценки сложности и стоимости инференса.
+ Технологии: PyTorch, Custom BPE Tokenizer.
+ Результат: Обучил генеративную модель с нуля (на датасете анекдотов), валидировав влияние качества токенизации на эффективность использования контекстного окна.
+
+### 2. Стратегии Alignment: DPO vs PPO(./02-llm-alignment-research/dpo-vs-ppo-alignment.ipynb)
+Домен: AI Safety & Alignment
+Исследование методов выравнивания LLM с человеческими предпочтениями для снижения уровня галлюцинаций и повышения безопасности.
+ Технологии: TRL (Transformer Reinforcement Learning), PyTorch.
+ Результат: Провел сравнительный анализ классического RLHF (PPO) и современного метода DPO. Продемонстрировал преимущество DPO в вычислительной эффективности, что критично для внедрения в бизнес-продукты (снижение TCO).
+
+### 3. Эффективное дообучение (PEFT/LoRA)(./03-peft-optimization/lora-dora-finetuning.ipynb)
+Домен: Оптимизация ресурсов (Resource Optimization)
+Дообучение тяжелых моделей на ограниченном железе (Consumer-grade GPU) с использованием адаптеров низкого ранга.
+ Технологии: Hugging Face PEFT, BitsAndBytes (Quantization).
+ Результат: Успешно адаптировал LLM под доменную задачу (анализ тональности), используя менее 10% обучаемых параметров. Подтвердил возможность On-premise развертывания и дообучения моделей на доступном оборудовании (T4 GPU).
+
+---
+
+## 💻 Технологический стек
  Frameworks: PyTorch, Hugging Face (Transformers, PEFT, TRL).
  Optimization: BitsAndBytes (4-bit/8-bit quantization), LoRA/DoRA.
  Environment: Google Colab (T4 GPU), Linux.
